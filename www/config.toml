@@ -49,20 +49,20 @@ theme = "hugo-icarus-theme"
 # E.g.: "Home" appears before all linked posts in the menu
 # and "Tags" / "Categories" after them.
 # TODO : remove this when more content / O. Duquesne
-# [[params.menu]]
-#     before = true
-#     label  = "Home"
-#     link   = "/"
-# 
-# [[params.menu]]
-#     before = false
-#     label  = "Tags"
-#     link   = "tags/"
-# 
-# [[params.menu]]
-#     before = false
-#     label  = "Categories"
-#     link   = "categories/"
+[[params.menu]]
+   before = true
+   label  = "Home"
+   link   = "/"
+
+#[[params.menu]]
+#   before = false
+#   label  = "Tags"
+#   link   = "tags/"
+
+[[params.menu]]
+   before = false
+   label  = "Categories"
+   link   = "categories/"
 
 # Enter a link for the follow button on the left
 [params.profile]

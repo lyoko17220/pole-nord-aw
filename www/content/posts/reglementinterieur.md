@@ -1,6 +1,7 @@
 ---
-title: "Reglementinterieur"
+title: "Règlement Intérieur"
 date: 2017-11-07T01:05:34+01:00
+categories: ["documents"]
 draft: false
 ---
 
@@ -104,6 +105,3 @@ Une récidive entraîne systématiquement une procédure d'exclusion.
 
 A Lille, le 13 octobre 2009
 Signatures des membres du bureau
-
-
-

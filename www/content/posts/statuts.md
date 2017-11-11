@@ -1,6 +1,7 @@
 ---
 title: "Statuts"
 date: 2017-11-07T01:03:04+01:00
+categories: ["documents"]
 draft: false
 ---
 # Statuts
@@ -400,6 +401,3 @@ Entreprises du Nord ( PôleNord ) comporte 14 articles.
 
 A Lille, le 29 juin 2009
 Signatures des membres du bureau
-
-
-
