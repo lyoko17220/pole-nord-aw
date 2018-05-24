@@ -1,0 +1,12 @@
+version: "2.1"
+
+services:
+  hugo-server:
+    build:
+      context: ../../
+      dockerfile: config/docker/hugo-server/Dockerfile
+      args:
+        - HUGO_BASE_URL=/
+        - HUGO_PORT=1313
+    ports:
+      - 1313

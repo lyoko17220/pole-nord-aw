@@ -5,6 +5,7 @@ stages:
 
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
+  DOCKER_COMPOSE: docker-compose -f config/docker/docker-compose.yml -p polenord
 
 docker_build:
   stage: build
@@ -12,7 +13,7 @@ docker_build:
     - source ~/.functions
     - set_docker_pic_et
   script: 
-    - docker build --build-arg HUGO_BASE_URL=http://polenord.et.ci.alterway.fr --build-arg HUGO_PORT=80 -t hugo-polenord .
+    - $DOCKER_COMPOSE build
 
 docker_deploy:
   stage: deploy
@@ -23,7 +24,7 @@ docker_deploy:
     - source ~/.functions
     - set_docker_pic_et
   script:
-    - docker run --rm -d -p 1313 --name polenord-${CI_COMMIT_SHA} hugo-polenord
+    - $DOCKER_COMPOSE up -d
   when: manual
 
 docker_remove:
@@ -32,6 +33,7 @@ docker_remove:
     - source ~/.functions
     - set_docker_pic_et
   script:
-    - docker rm -f polenord-${CI_COMMIT_SHA}
+    - $DOCKER_COMPOSE stop
+    - $DOCKER_COMPOSE rm -v
   when: manual
 
