@@ -1,0 +1,39 @@
+stages:
+  - build
+  - deploy
+  - clean
+
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+  DOCKER_COMPOSE: docker-compose -f config/docker/docker-compose.yml -p polenord
+
+docker_build:
+  stage: build
+  before_script:
+    - source ~/.functions
+    - set_docker_pic_et
+  script: 
+    - $DOCKER_COMPOSE build
+
+docker_deploy:
+  stage: deploy
+  environment:
+    name: ET
+    url: http://polenord.et.ci.alterway.fr/
+  before_script:
+    - source ~/.functions
+    - set_docker_pic_et
+  script:
+    - $DOCKER_COMPOSE up -d
+  when: manual
+
+docker_remove:
+  stage: clean
+  before_script:
+    - source ~/.functions
+    - set_docker_pic_et
+  script:
+    - $DOCKER_COMPOSE stop
+    - $DOCKER_COMPOSE rm -v
+  when: manual
+
