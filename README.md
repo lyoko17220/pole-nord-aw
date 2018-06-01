@@ -1,3 +1,5 @@
+**Travail réalisé pendant mon stage de fin de Licence Informatique au sein de la société Alter Way Lille, le repos est seulement présent pour un usage pédagogique**
+
 # Association PoleNord
 
 ## Pré-requis
